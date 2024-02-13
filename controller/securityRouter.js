@@ -58,5 +58,10 @@ router.post("/login",async(req,res)=>{
     })
 })
 
+router.get("/view",async(req,res)=>{
+    let data=req.body
+    let result=await securityModel.find()
+    res.json(result)
+})
 
 module.exports=router
