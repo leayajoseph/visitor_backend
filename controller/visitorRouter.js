@@ -12,4 +12,11 @@ router.post("/addvisitor",async(req,res)=>{
 
 })
 
+router.get("/viewvisitor",async(req,res)=>{
+    let result=await visitorModel.find()
+    .populate("securityId","name age mobile -_id")
+    .exec()
+    res.json(result)
+})
+
 module.exports=router
