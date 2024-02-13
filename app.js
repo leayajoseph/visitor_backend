@@ -3,6 +3,7 @@ const cors=require("cors")
 const mongoose=require("mongoose")
 
 const securityRoute=require("./controller/securityRouter")
+const visitorRoute=require("./controller/visitorRouter")
 
 const app=express()
 
@@ -15,6 +16,7 @@ useNewUrlParser: true
 })
 
 app.use("/api/security",securityRoute)
+app.use("/api/visitor",visitorRoute)
 
 app.listen(3001,()=>{
     console.log("server running")
